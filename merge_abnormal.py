@@ -165,9 +165,8 @@ print(allabnormal_merge)
 
 allabnormal30875 = allabnormal_merge.to_numpy()
 
-#np.save('/Users/priyamvadakumar/Desktop/CARLlslab/allabnormal30875.npy', allabnormal30875)
 
-#np.save("/home/priyamvada/data/allabnormal30875.npy", allabnormal30875)
+np.save("/home/priyamvada/data/allabnormal30875.npy", allabnormal30875)
 
 
 
