@@ -13,7 +13,7 @@ plt.rcParams['mathtext.fontset'] = 'dejavuserif'
 plt.rcParams.update({'font.size': 13})
 # plt.rcParams.update({'font.size': 15})
 
-# expected transcripts
+# expected coverage for transcripts
 def ReadRawCorrection(filename): #expected
 	ExpectedProb={}
 	fp=open(filename, 'rb')
@@ -57,7 +57,7 @@ plt.rcParams.update({'font.size': 13})
 # plt.rcParams.update({'font.size': 15})
 
 
-#observed data
+#observed coverage for transcripts 
 def ReadRawStartPos(filename):
 	TrueRaw={}
 	fp=open(filename, 'rb')
