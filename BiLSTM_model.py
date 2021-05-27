@@ -9,7 +9,7 @@ import numpy as np
 #allabnormal=np.load('allabnormal30875_first500.npy', allow_pickle=True)
 
 
-# full SAD Human Body Map ERR030875 data
+# Load full SAD Human Body Map ERR030875 data
 allnormal=np.load("/home/priyamvada/data/allnormal30875.npy",allow_pickle=True)
 allabnormal=np.load("/home/priyamvada/data/allabnormal30875.npy",allow_pickle=True)
 
@@ -40,7 +40,7 @@ print(min(l))
 #exit()
 
 
-# graph for transcript filtering for maxlen=5000
+# plot graph for transcript filtering for maxlen=5000
 import matplotlib.pyplot as plt
 
 plt.plot(m)
@@ -55,7 +55,7 @@ plt.show()
 
 
 #%%
-
+#filter transcripts 
 combo_new=[]
 maxlen=5000
 for i in range(combo.shape[0]):
@@ -68,7 +68,7 @@ combo_new=np.array(combo_new)
 
 
 
-
+# pad sequences to maxlen 
 from keras.preprocessing.sequence import pad_sequences
 
 #e_o= pad_sequences(combo[:, 1:3], padding='post', dtype='float32')
@@ -85,7 +85,9 @@ print(X_combo.shape)
 
 
 
-# #%%
+#%%
+
+# change object type with label encoder 
 y_combo=combo_new[:,-1]
 
 from sklearn.preprocessing import LabelEncoder
@@ -143,7 +145,7 @@ history=model.fit(X_combo_train, y_combo_train, epochs=30, batch_size=20, verbos
 
 #%%
 import matplotlib.pyplot as plt
-#validation set :Its purpose is to track progress through validation loss and accuracy.
+#validation set :It's purpose is to track progress through validation loss and accuracy.
 # plot accuracy
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
@@ -162,7 +164,7 @@ plt.legend(['train', 'validation'], loc='upper left')
 plt.show()
 
 #%%
-
+# model evaluated on test set with accuracy output 
 test_results = model.evaluate(X_combo_test, y_combo_test, verbose=False)
 print(f'Test results - Loss: {test_results[0]} - Accuracy: {100*test_results[1]}%')
 
