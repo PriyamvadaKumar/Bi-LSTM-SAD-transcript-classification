@@ -177,5 +177,4 @@ np.save("/home/priyamvada/data/allabnormal30875.npy", allabnormal30875)
 
 # f = open("/home/priyamvada/data/{ERR030873_id}_allabnormal.dat", "wb")
 # pickle.dump(allabnormal_merge, f)
-
 # f.close()
