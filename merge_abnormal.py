@@ -105,7 +105,7 @@ print(dfmerge)
 
 
 
-# extract and label (1) adjustable anomalous transcripts
+## extract and label (1) adjustable anomalous transcripts
 
 
 #“~/data/ERR030875/test_correctapprox9/test_adjusted_quantification.tsv”
@@ -129,7 +129,7 @@ print(dfa2)
 
 
 
-#extract and label (2) non-adjustable anomalous transcripts
+## extract and label (2) non-adjustable anomalous transcripts
 
 import pandas as pd
 dfan = pd.read_csv("/home/priyamvada/data/ERR030875/test_correctapprox9/test_unadjustable_pvalue.tsv", sep="\t")
@@ -152,24 +152,24 @@ print(anomalous_merge)
 #len(anomalous_merge)
 
 
-#  making dict out of anomalous merge
+# making dict out of anomalous merge
 # anomaldict=anomalous_merge.set_index('Transcript Name').to_dict()
 # print('anomalaousdictdone')
 
 #%%
 
-####
+## merge all abnormals with expected and observed coverage distribution
 allabnormal_merge=pd.merge(dfmerge,anomalous_merge,on='Transcript Name')
 print(allabnormal_merge)
-###
+
 
 allabnormal30875 = allabnormal_merge.to_numpy()
 
 #np.save('/Users/priyamvadakumar/Desktop/CARLlslab/allabnormal30875.npy', allabnormal30875)
 
-np.save("/home/priyamvada/data/allabnormal30875.npy", allabnormal30875)
+#np.save("/home/priyamvada/data/allabnormal30875.npy", allabnormal30875)
 
-#%%
+
 
 
 
